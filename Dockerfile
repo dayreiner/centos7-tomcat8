@@ -5,7 +5,7 @@ MAINTAINER dayreiner
 ENV JDK_MAJOR_VERSION=8u74 \
     JDK_VERSION=1.8.0_74 \
     TOMCAT_MAJOR_VERSION=8 \
-    TOMCAT_VERSION=8.0.32 \
+    TOMCAT_VERSION=8.0.38 \
     JAVA_HOME=/opt/java \
     CATALINA_HOME=/opt/tomcat \
     PATH=$PATH:$JAVA_HOME/bin:${CATALINA_HOME}/bin:${CATALINA_HOME}/scripts \
@@ -28,7 +28,7 @@ RUN echo "Installing Java JDK ${JDK_VERSION}..." && \
     rm jdk-${JDK_MAJOR_VERSION}-linux-x64.tar.gz && \
     mv jdk${JDK_VERSION} ${JAVA_HOME} && \
     echo "Installing Tomcat ${TOMCAT_VERSION}..." && \
-    wget -nv http://apachemirror.ovidiudan.com/tomcat/tomcat-${TOMCAT_MAJOR_VERSION}/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz \
+    wget -nv http://apache.mirror.gtcomm.net/tomcat/tomcat-${TOMCAT_MAJOR_VERSION}/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz \
     -O /opt/apache-tomcat-${TOMCAT_VERSION}.tar.gz && \
     echo "Checking file integrity..." && \
     sha1sum -c /opt/apache-tomcat-${TOMCAT_VERSION}.tar.gz.sha && \
